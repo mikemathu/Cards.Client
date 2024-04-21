@@ -1,0 +1,50 @@
+﻿@model Cards.Client.Models.Card
+
+<!--  Card Details -->
+<div class="cs-cardTable" id="cardTable">
+    <h1>Card Detail</h1>
+    <hr />
+    <table>
+        <tr>
+            <td>Card ID:</td>
+            <td>@Model.CardId </td>
+        </tr>
+        <tr>
+            <td><b>Name:</b></td>
+            <td> @Model.Name</td>
+        </tr>
+        <tr>
+            <td><b>Description:</b></td>
+            <td>@Model.Description</td>
+        </tr>
+        <tr>
+            <td><b>Date of Creation:</b></td>
+           @*  <td>@Model.DateOfCreation</td> *@
+            <td><span class="date-of-creation">@Model.DateOfCreation</span></td>
+        </tr>
+        <tr>
+            <td><b>Status:</b></td>
+            <td>@Model.Status</td>
+        </tr>
+     @*    <tr>
+            <td><b>Created By:</b></td>
+            <td>@Model.createdByAppUser</td>
+        </tr> *@
+        <tr>
+            <td><b>Color:</b></td>
+            <td style="background-color: @Model.Color;"></td>
+        </tr>
+    </table>
+    <a asp-controller="Card" asp-action="GetCards" class="btn btn-dark cs-backtoCards cardDetailsBackBtn">Back</a>
+</div>
+
+<!-- JavaScript for Date Formatting -->
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        var dateElements = document.querySelectorAll('.date-of-creation');
+        dateElements.forEach(function (element) {
+            var date = new Date(element.innerText);
+            element.innerText = date.toLocaleDateString(); 
+        });
+    });
+</script>

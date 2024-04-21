@@ -1,0 +1,21 @@
+﻿@{
+    Layout = "_LayoutRegisterLogin";
+    ViewBag.Title = "Login";
+}
+
+<!-- Login Form -->
+<form asp-controller="Auth" asp-action="Login" method="post">
+    <h3 class="text-center mb-4">Login</h3>
+    <div class="form-group">
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" class="form-control" placeholder="Email" autocomplete="username" required>
+    </div>
+    <div class="form-group">
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" class="form-control" placeholder="Password" autocomplete="current-password" required>
+    </div>
+    <div class="form-group">
+        <button type="submit" class="btn btn-primary">Login</button>
+    </div>
+    <a href="/Auth/Register">Register</a>
+</form>

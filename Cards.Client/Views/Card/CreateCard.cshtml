@@ -1,0 +1,26 @@
+﻿@model Cards.Client.Models.Card
+
+<!--  Create Card Table -->
+<div class="row cs-card-createform-container" id="card-createform">
+    <h1>Create Card</h1>
+    <hr />
+    <form asp-controller="Card" asp-action="CreateCard" method="post" class="cs-createCard" id="createCardForm">
+        <div class="mb-3">
+            <label asp-for="Name" class="form-label">Name</label>
+            <input asp-for="Name" class="form-control" id="cardName" required />
+            <span asp-validation-for="Name" class="text-danger"></span>
+        </div>
+        <div class="mb-3">
+            <label asp-for="Description" class="form-label">Description</label>
+            <textarea asp-for="Description" class="form-control" id="cardDescription" rows="3"></textarea>
+            <span asp-validation-for="Description" class="text-danger"></span>
+        </div>
+        <div class="mb-3">
+            <label asp-for="Color" class="form-label">Color</label>
+            <input asp-for="Color" type="color" class="form-control" id="cardColor" value="#00FF00" />
+            <span asp-validation-for="Color" class="text-danger"></span>
+        </div>
+        <a class="btn btn-dark cs-backtoCards">Back</a>
+        <button id="createCard" class="btn btn-warning ladda-button my-button" data-style="expand-right">Submit</button>
+    </form>
+</div>
